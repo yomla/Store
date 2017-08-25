@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { BuyersComponent } from './components/buyers/buyers.component';
 import { ProductsComponent } from './components/products/products.component';
+import { BuyersService } from './shared/services/buyers.service';
+ 
 
 const appRoutes: Routes = [
   {
@@ -15,7 +17,9 @@ const appRoutes: Routes = [
   },
 
   { path: 'buyers', 
-  component: BuyersComponent },
+    component: BuyersComponent,
+
+  },
   {
     path: 'products',
     component: ProductsComponent,
@@ -38,7 +42,7 @@ const appRoutes: Routes = [
 
     
   ],
-  providers: [],
+  providers: [BuyersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

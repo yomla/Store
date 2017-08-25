@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuyersService } from '../../shared/services/buyers.service';
 
 @Component({
   selector: 'app-buyers',
@@ -7,43 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyersComponent implements OnInit {
 
-  private buyers: any = [];
+  private allBuyers: any[] = [];
 
-  constructor() {
-
-  	this.buyers = [
- 		{
- 			id: 1,
-			firstName: 'John',
- 			lastName: 'Doe',
- 			email: 'john@doe.com'
- 		},
- 		{
- 			id: 2,
- 			firstName: 'Sam',
- 			lastName: 'Smith',
- 			email: 'sam@doe.com'
- 		},
- 		{
- 			id: 3,
- 			firstName: 'George',
- 			lastName: 'Sullivan',
- 			email: 'george@doe.com'
+  constructor(private bayers: BuyersService) {
  
- 		},
- 
- 		{
- 			id: 4,
- 			firstName: 'John',
- 			lastName: 'Deere',
- 			email: 'john@doe.com'
- 		}
- 
- 		];
+ }
 
-   }
+ ngOnInit() {
 
-  ngOnInit() {
+  	this.allBuyers = this.bayers.getBuyers();
   }
+
+ remove(buyer) {
+	const index = this.allBuyers.indexOf(buyer);
+	this.allBuyers.splice(index,1);
+ }
 
 }
