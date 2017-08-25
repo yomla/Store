@@ -1,31 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { BuyersComponent } from './components/buyers/buyers.component';
 import { ProductsComponent } from './components/products/products.component';
+import { AppRoutingModule } from './app-routing.module';
 import { BuyersService } from './shared/services/buyers.service';
  
-
-const appRoutes: Routes = [
-  {
-     path: '',
-     redirectTo: '/buyers',
-     pathMatch: 'full'
-  },
-
-  { path: 'buyers', 
-    component: BuyersComponent,
-
-  },
-  {
-    path: 'products',
-    component: ProductsComponent,
-  }
-];
-
 
 @NgModule({
   declarations: [
@@ -34,14 +17,13 @@ const appRoutes: Routes = [
     BuyersComponent,
     ProductsComponent
   ],
-  imports: [
-    RouterModule.forRoot(
-      appRoutes
-      ),
-    BrowserModule,
 
-    
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule    
   ],
+
   providers: [BuyersService],
   bootstrap: [AppComponent]
 })

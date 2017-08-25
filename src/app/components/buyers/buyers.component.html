@@ -19,4 +19,21 @@
     </tr>
   </tbody>
 </table>
-<router-outlet></router-outlet>
+
+<div>
+	<form class="form-group">
+		<div class="input-group col-md-4 pl-0 my-lg-4 my-2">
+			<span class="input-group-addon">Name</span>
+			<input type="text" name="firstName" [(ngModel)]="newBuyer.firstName" />
+		
+			<span class="input-group-addon">Last Name</span>
+			<input type="text" name="lastName" [(ngModel)]="newBuyer.lastName" />
+		
+			<span class="input-group-addon">Email</span>
+			<input type="text" name="email" [(ngModel)]="newBuyer.email" />
+		
+			<button type="button" class="btn btn-primary" (click)="addBuyer(newBuyer)" type="button">
+			Add New Buyer</button>
+		</div>
+	</form>
+
