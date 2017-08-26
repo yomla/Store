@@ -33,4 +33,20 @@ export class ProductsService {
     return this.products;
   }
 
+  public getQuantity(quantity){
+    return this.products.find((product) => {
+      return product['quantity'] == quantity;
+    })
+  }
+
+  public addProducts(product) {
+  	 let thing = this.getQuantity(product);
+     return thing.quantity ++;
+  }
+
+  public subProducts(product) {
+  	 let thing = this.getQuantity(product);
+     return thing.quantity --;
+  }
+
 }

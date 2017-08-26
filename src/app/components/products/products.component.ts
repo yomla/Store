@@ -18,4 +18,11 @@ export class ProductsComponent implements OnInit {
   	this.allProducts = this.product.getProducts();
   }
 
+  addProduct(product){
+    this.product.addProducts(product);
+  }
+
+  subProduct(product){
+    this.product.subProducts(product);
+  }
 }
