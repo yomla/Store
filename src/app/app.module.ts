@@ -8,6 +8,7 @@ import { BuyersComponent } from './components/buyers/buyers.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BuyersService } from './shared/services/buyers.service';
+import { ProductsService } from './shared/services/products.service';
 import { BuyerDetailsComponent } from './components/buyers/buyer-details/buyer-details.component';
  
 
@@ -26,7 +27,7 @@ import { BuyerDetailsComponent } from './components/buyers/buyer-details/buyer-d
     AppRoutingModule    
   ],
 
-  providers: [BuyersService],
+  providers: [BuyersService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

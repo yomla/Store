@@ -16,7 +16,7 @@ export class BuyerDetailsComponent implements OnInit {
 
   ngOnInit() {
   	let id = parseInt(this.route.snapshot.paramMap.get('id'));
-    console.log(id, 'xxxx',  this.buyers.getBuyer(id));
+    console.log(id, '',  this.buyers.getBuyer(id));
     this.buyer = this.buyers.getBuyer(id);
   }
 
