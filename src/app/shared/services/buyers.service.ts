@@ -48,7 +48,11 @@ export class BuyersService {
   	this.buyers.push(newBuyer);
   }
 
-
+  public getBuyer(id){
+    return this.buyers.find((buyer) => {
+      return buyer['id'] == id;
+    })
+  }
 
 }
 

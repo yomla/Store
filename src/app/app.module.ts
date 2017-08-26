@@ -8,6 +8,7 @@ import { BuyersComponent } from './components/buyers/buyers.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BuyersService } from './shared/services/buyers.service';
+import { BuyerDetailsComponent } from './components/buyers/buyer-details/buyer-details.component';
  
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BuyersService } from './shared/services/buyers.service';
     AppComponent,
     LayoutComponent,
     BuyersComponent,
-    ProductsComponent
+    ProductsComponent,
+    BuyerDetailsComponent
   ],
 
   imports: [
