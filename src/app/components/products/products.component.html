@@ -1,15 +1,21 @@
 
 <h1>Products</h1><br>
 
+<div class="input-group col-md-5 pl-0 my-lg-4 my-2">
+  <span class="input-group-addon">Filter By name</span>
+  <input [(ngModel)]="filterProducts" type="text" class="form-control"/>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
+      <th>Quantity</th>
      
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of allProducts ">
+    <tr *ngFor="let product of allProducts | filter: 'name' : filterProducts">
       <td class="align-middle">
           {{ product.name }}      
       </td>

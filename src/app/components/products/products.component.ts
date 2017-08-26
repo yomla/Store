@@ -10,6 +10,7 @@ import { ProductsService } from '../../shared/services/products.service';
 export class ProductsComponent implements OnInit {
 
   allProducts: any[];
+  private filterProducts: string = '';
 
   constructor(private product: ProductsService) { }
 
